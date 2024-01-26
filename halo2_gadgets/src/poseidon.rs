@@ -279,7 +279,7 @@ impl<
     pub fn hash(
         mut self,
         mut layouter: impl Layouter<F>,
-        message: [AssignedCell<F, F>; L],
+        message: Vec<AssignedCell<F, F>>,
     ) -> Result<AssignedCell<F, F>, Error> {
         for (i, value) in message
             .into_iter()
