@@ -373,7 +373,7 @@ impl<F: PrimeField, S: Spec<F, T, RATE>, const T: usize, const RATE: usize, cons
     Hash<F, S, ConstantLength<L>, T, RATE>
 {
     /// Hashes the given input.
-    pub fn hash(mut self, message: [F; L]) -> F {
+    pub fn hash(mut self, message: Vec<F>) -> F {
         for value in message
             .into_iter()
             .chain(<ConstantLength<L> as Domain<F, RATE>>::padding(L))
